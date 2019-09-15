@@ -3,8 +3,8 @@
   <head>
     <meta charset="utf-8">
     <script async src="https://cdn.ampproject.org/v0.js"></script>
-    <title>Hello, AMPs</title>
-    <link rel="canonical" href="https://amp.dev/documentation/guides-and-tutorials/start/create/basic_markup/">
+    <title>Local Landing Page</title>
+    <link rel="canonical" href="https://github.com/fullmetalfenix/amp-local-landing-page">
     <meta name="viewport" content="width=device-width,minimum-scale=1,initial-scale=1">
     <script type="application/ld+json">
       {
@@ -17,9 +17,110 @@
         ]
       }
     </script>
+    <script async custom-element="amp-social-share" src="https://cdn.ampproject.org/v0/amp-social-share-0.1.js"></script>
+    
     <style amp-boilerplate>body{-webkit-animation:-amp-start 8s steps(1,end) 0s 1 normal both;-moz-animation:-amp-start 8s steps(1,end) 0s 1 normal both;-ms-animation:-amp-start 8s steps(1,end) 0s 1 normal both;animation:-amp-start 8s steps(1,end) 0s 1 normal both}@-webkit-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@-moz-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@-ms-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@-o-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}</style><noscript><style amp-boilerplate>body{-webkit-animation:none;-moz-animation:none;-ms-animation:none;animation:none}</style></noscript>
+    <style amp-custom>
+            :root {
+              --color-primary: #005AF0;
+              --color-text-light: #fff;
+            }
+            /* a custom sharing icon */
+            amp-social-share.custom-style {
+              background-color: #008080;
+              background-image: url('https://raw.githubusercontent.com/google/material-design-icons/master/social/1x_web/ic_share_white_48dp.png');
+              background-repeat: no-repeat;
+              background-position: center;
+              background-size: contain;
+            }
+            /* blue icons with rounded corners  */
+            amp-social-share.rounded {
+              border-radius: 50%;
+              background-size: 60%;
+              color: var(--color-text-light);
+              background-color: var(--color-primary);
+            }
+
+            /*Heading*/
+            header{
+                display: flex;
+                justify-content: space-around;
+                padding: 20px 0px;
+                background: darkslategrey;
+                align-items: center;
+            }
+            #header-logo{
+                font-size: 22px;
+                font-weight: 600;
+                color: rgba(250,250,250, .87)
+            }
+            h1{
+                font-size: 72px;
+                margin: 30px 0px;
+                text-align: center;
+            }
+            #social-container a{
+                color: white;
+                font-weight: 600;
+                font-size: 24px;
+            }
+            #social-container{
+                display: flex;
+                justify-content: center;
+                align-items: center;
+            }
+            #social-container > *{
+                margin: 0px 3px;
+            }
+
+            #section-1{
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                max-width: 1000px;
+                margin: 0px auto;
+                min-height: 600px;
+            }
+            #section-1 div{
+                flex: 1;
+                padding: 20px;
+
+            }
+            #hero-image{
+                background: #4f2f2f;
+                color: rgba(250,250,250,.87);
+                line-height: 2;
+                font-size: 26px;
+                font-weight: 600;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                height: 400px;
+            }
+
+          </style>
   </head>
   <body>
-    <h1>Welcome to the mobile web</h1>
-  </body>
+    <header>
+            <p id="header-logo">LOGO HERE</p>
+            <div id="social-container">
+                    <amp-social-share type="email"   width="40" height="40" data-param-text="Look at this local biz!" data-param-url="" data-param-attribution="AMP landing page"></amp-social-share>
+                    <amp-social-share type="linkedin" width="40" height="40" data-param-text="Look at this local biz!" data-param-url="" data-param-attribution="AMP landing page"></amp-social-share>
+                    <amp-social-share type="pinterest" width="40" height="40" data-param-text="Look at this local biz!" data-param-url="" data-param-attribution="AMP landing page"
+                      data-param-media="https://amp.dev/static/samples/img/amp.jpg"></amp-social-share>
+                    <amp-social-share type="twitter" width="40" height="40" data-param-text="Look at this local biz!" data-param-url="" data-param-attribution="AMP landing page"></amp-social-share>
+                    <a>(212) 555-5555</a>
+            </div>
+    </header>
+    <h1>Big Old Headline Here</h1>
+    <section id="section-1" class="section">
+        <div id="hero-image">
+            <p>Hero <br>Image <br>Here.</p>
+        </div>
+        <div>
+            <h2>Speedy Landing page, Quick on mobile!</h2>
+            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum</p>
+        </div>
+    </section>
+</body>
 </html>
