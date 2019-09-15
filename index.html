@@ -18,7 +18,7 @@
       }
     </script>
     <script async custom-element="amp-social-share" src="https://cdn.ampproject.org/v0/amp-social-share-0.1.js"></script>
-    
+    <script async custom-element="amp-iframe" src="https://cdn.ampproject.org/v0/amp-iframe-0.1.js"></script>
     <style amp-boilerplate>body{-webkit-animation:-amp-start 8s steps(1,end) 0s 1 normal both;-moz-animation:-amp-start 8s steps(1,end) 0s 1 normal both;-ms-animation:-amp-start 8s steps(1,end) 0s 1 normal both;animation:-amp-start 8s steps(1,end) 0s 1 normal both}@-webkit-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@-moz-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@-ms-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@-o-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}</style><noscript><style amp-boilerplate>body{-webkit-animation:none;-moz-animation:none;-ms-animation:none;animation:none}</style></noscript>
     <script async custom-element="amp-carousel" src="https://cdn.ampproject.org/v0/amp-carousel-0.1.js"></script>
     <style amp-custom>
@@ -98,15 +98,7 @@
                 align-items: center;
                 height: 400px;
             }
-            #section-1 button{
-                padding: 18px 35px;
-                border: none;
-                font-size: 18px;
-                background: grey;
-                color: rgba(250,250,250,.87);
-                box-shadow: 0px 4px 2px rgba(0,0,0,.4);
-                border-radius: 35px;
-            }
+
             #section-2{
                 display: flex;
                 max-width: 1000px;
@@ -168,6 +160,23 @@
                 }
                 .staff-title{
                 }
+
+                #contact-info{
+                        display: flex;
+                        max-width: 1000px;
+                        margin: 0px auto;
+                        padding: 50px 0px;
+                }
+                
+                #contact-info div{
+                    flex: 1;
+                    padding: 20px;
+                }
+                #contact-title{
+                    font-weight: 600;
+                    font-size: 26px;
+                }
+
     </style>
   </head>
   <body>
@@ -250,6 +259,25 @@
                 <p class="staff-title">Title</p>
             </div>
             
+        </div>
+    </section>
+    <section id="contact-info">
+        <div>
+            <p id="contact-title">Interested? Contact Us:</p>
+            <p id="address">123 fake st <br> fake town, FS, 00000</p>
+            <a href="" id="fake-email">fake@fake.com</a>
+            <p id="phone-footer">(212) 555-5555</p>
+            <button id="contact-footer">More Info</button>
+        </div>
+        <div>
+                <amp-iframe width="600"
+                height="400"
+                title="Google map pin on Googleplex, Mountain View CA"
+                layout="responsive"
+                sandbox="allow-scripts allow-same-origin allow-popups"
+                frameborder="0"
+                src="https://www.google.com/maps/embed/v1/place?q=place_id:ChIJ2eUgeAK6j4ARbn5u_wAGqWA&key=AIzaSyAyAS599A2GGPKTmtNr9CptD61LE4gN6oQ">
+              </amp-iframe>
         </div>
     </section>
 </body>
