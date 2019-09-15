@@ -20,6 +20,7 @@
     <script async custom-element="amp-social-share" src="https://cdn.ampproject.org/v0/amp-social-share-0.1.js"></script>
     
     <style amp-boilerplate>body{-webkit-animation:-amp-start 8s steps(1,end) 0s 1 normal both;-moz-animation:-amp-start 8s steps(1,end) 0s 1 normal both;-ms-animation:-amp-start 8s steps(1,end) 0s 1 normal both;animation:-amp-start 8s steps(1,end) 0s 1 normal both}@-webkit-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@-moz-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@-ms-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@-o-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}</style><noscript><style amp-boilerplate>body{-webkit-animation:none;-moz-animation:none;-ms-animation:none;animation:none}</style></noscript>
+    <script async custom-element="amp-carousel" src="https://cdn.ampproject.org/v0/amp-carousel-0.1.js"></script>
     <style amp-custom>
             :root {
               --color-primary: #005AF0;
@@ -46,7 +47,7 @@
                 display: flex;
                 justify-content: space-around;
                 padding: 20px 0px;
-                background: darkslategrey;
+                background: grey;
                 align-items: center;
             }
             #header-logo{
@@ -87,7 +88,7 @@
 
             }
             #hero-image{
-                background: #4f2f2f;
+                background: grey;
                 color: rgba(250,250,250,.87);
                 line-height: 2;
                 font-size: 26px;
@@ -101,7 +102,7 @@
                 padding: 18px 35px;
                 border: none;
                 font-size: 18px;
-                background: #4f2f2f;
+                background: grey;
                 color: rgba(250,250,250,.87);
                 box-shadow: 0px 4px 2px rgba(0,0,0,.4);
                 border-radius: 35px;
@@ -121,6 +122,52 @@
                 background: lightgrey;
                 box-shadow: 0px 0px 5px rgba(0,0,0, .4)                
             }
+            amp-carousel{
+                max-height: 400px;
+            }
+            .testimonial{
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                flex-direction: column;
+                max-width: 800px;
+            }
+            #staff-section{
+                display: flex;
+                flex-direction: column;
+                justify-content: center;
+                align-items: center;
+            }
+            #staff-section h3{
+                font-size: 72px
+            }
+            #staff-triptic-container{
+                display: flex;
+                justify-content: space-between;
+                width: 100%;
+                max-width: 1000px;
+            }
+                .staff-triptic{
+                flex: 1;
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+                padding: 10px 20px;
+                box-sizing: content-box;
+
+                }
+                .pic-placeholder{
+                    height: 200px;
+                    width: 100%;
+                    background: grey;
+                }
+                .staff-name{
+                    text-transform: uppercase;
+                    font-weight: 800;
+
+                }
+                .staff-title{
+                }
     </style>
   </head>
   <body>
@@ -162,6 +209,47 @@
             <p>
                     Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.
             </p>
+        </div>
+    </section>
+    <section id="section-3">
+            <amp-carousel width="400"
+            height="300"
+            layout="responsive"
+            autoplay 
+            type="slides">
+            <div class="testimonial">
+                <p>"Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua."</p>
+                <p> - Name #1</p>
+            </div>
+            <div class="testimonial">
+                    <p>"Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua."</p>
+                    <p> - Name #2</p>
+            </div>
+            <div class="testimonial">
+                        <p>"Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua."</p>
+                        <p> - Name #3</p>
+            </div>        
+            </amp-carousel>
+    </section>
+    <section id="staff-section">
+        <h3 id="staff-headline">Meet Our Staff:</h2>
+        <div id="staff-triptic-container">
+            <div class="staff-triptic">
+                <span class="pic-placeholder"></span>
+                <p class="staff-name">Name</p>
+                <p class="staff-title">Title</p>
+            </div>
+            <div class="staff-triptic">
+                <span class="pic-placeholder"></span>
+                <p class="staff-name">Name</p>
+                <p class="staff-title">Title</p>
+            </div>
+            <div class="staff-triptic">
+                <span class="pic-placeholder"></span>
+                <p class="staff-name">Name</p>
+                <p class="staff-title">Title</p>
+            </div>
+            
         </div>
     </section>
 </body>
