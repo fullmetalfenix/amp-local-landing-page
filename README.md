@@ -1,6 +1,6 @@
 # AMP Local Listing Landing Page
 
-This is based on a project I originally built as a proof of concept while working at an agency [here](https://generationsbeyond-com.cdn.ampproject.org/c/generationsbeyond.com/clients/amp/), which itself was modled after an info graphic from the "Pefect local landing page", an article found [here](https://www.bowlerhat.co.uk/perfectly-optimised-local-landing-page/) and based on this:
+This is based on a project I originally built as a proof of concept while working at an agency [here](https://generationsbeyond-com.cdn.ampproject.org/c/generationsbeyond.com/clients/amp/), which itself was moddled after an info graphic from  "the Pefect local landing page", an article found [here](https://www.bowlerhat.co.uk/perfectly-optimised-local-landing-page/) and based on this:
 
 ![Perfectly Optimized Local Landing Page](https://searchengineland.com/figz/wp-content/seloads/2016/06/perfectly-optimized-local-landing-page.png)
 
@@ -27,4 +27,10 @@ Here I went back to the AMP Component library and looked for something I could u
 
 _note_: The amp-carousell component adds a ton of stuff under the hood, but you dont have to worry about that- just know that whatever the direct children comonents of the amp-carousel tag contained within the slider are will be made into slides. I also added the autoplay attribute to the amp-carousel tag so it would autoplay (obviously) and loop where as without it it wont loop at the end.
 
-## 5.
+## 5. Contact and map section
+
+Here I added the contact info as well as one last CTA on the left, then an amp-iframe on the right, taken from the examples section of the documentation [here](https://amp.dev/documentation/examples/components/amp-iframe/?format=websites). _Remember to add the corisponding script tag to the head of the doc whenever you add a component_.
+
+Last but not least, take advantage of Google's own AMP Cache for serving your page lightning fast! How do you do it? Just adjust your URL to match there specifications and enter it in your browser and your set - its cached! The easyiest way to do it is to go to the documentation for the cache and use the url builder [here](https://amp.dev/documentation/examples/guides/using_the_google_amp_cache/) then copy and paste the link in your browser.
+
+And thats the project! _Note: this boiler plate is for the most part unstyled with the exeption of some colors to show structural seperation or placeholders for images. When adding images, use the amp-img tag and be *sure to make the page mobily responsive! Remember - Amp was mostly created to speed up the mobile web. Check for other branches with styling, responsive design for mobile and Accessible markup comming sooin(ish) _:
