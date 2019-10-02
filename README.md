@@ -34,3 +34,24 @@ Here I added the contact info as well as one last CTA on the left, then an amp-i
 Last but not least, take advantage of Google's own AMP Cache for serving your page lightning fast! How do you do it? Just adjust your URL to match there specifications and enter it in your browser and your set - its cached! The easyiest way to do it is to go to the documentation for the cache and use the url builder [here](https://amp.dev/documentation/examples/guides/using_the_google_amp_cache/) then copy and paste the link in your browser.
 
 And thats the project! _Note: this boiler plate is for the most part unstyled with the exeption of some colors to show structural seperation or placeholders for images. When adding images, use the amp-img tag and be *sure to make the page mobily responsive! Remember - Amp was mostly created to speed up the mobile web. Check for other branches with styling, responsive design for mobile and Accessible markup comming sooin(ish) _:
+
+
+
+----------
+
+_Appended: Adding images_
+
+This being a boilerplate, I didn't add images. Images can be a bit trickey in AMP as they have to have a specific height and width to be valid (to avoid content pushing, which annoys everyone). you can just include one size but thats not that mobile friendly - Images CAN be done responsivly with a sourceset attribue though:
+ex:
+`<amp-img alt="Hummingbird"
+  src="/static/inline-examples/images/hummingbird-wide.jpg"
+  width="640"
+  height="457"
+  layout="responsive"
+  srcset="/static/inline-examples/images/hummingbird-wide.jpg 640w,
+            /static/inline-examples/images/hummingbird-narrow.jpg 320w">
+</amp-img>`
+
+To make this work you need to have different sized images for different sized screens.
+
+more about srcset [here](https://developer.mozilla.org/en-US/docs/Learn/HTML/Multimedia_and_embedding/Responsive_images)
