@@ -1,5 +1,5 @@
 <!doctype html>
-<html amp lang="en">
+<html amp lang="en" prefix="og: https://ogp.me/ns#">
   <head>
     <meta charset="utf-8">
     <script async src="https://cdn.ampproject.org/v0.js"></script>
@@ -178,6 +178,34 @@
                 }
 
     </style>
+<!-- Metadata for open graph (when you share the link to your site)-->
+
+<meta property="og:title" content="Landing Page" /><!-- Page Title (not site)-->
+<meta property="og:type" content="website" /><!-- Type of object - im using website look for more info at https://ogp.me/-->
+<meta property="og:url" content="https://example.com/replace-with-your-link" /><!-- link that gets shared-->
+<meta property="og:image" content="opengraph.png" /><!-- image that gets shared -->
+
+
+<meta property="og:image:width" content="1200" /><!-- not actually required-->
+<meta property="og:image:height" content="630" /><!-- not actually required-->
+<!-- Note: you can add multiple image sizes, just add a new og:image tags with the og:width and og:height after each new instance-->
+<!-- optional opengraph
+// for audio acomp.
+<meta property="og:audio" content="<path/to/file.mp3>" />
+// Site description (probably a good idea)
+<meta property="og:description" content="Site description here" />
+// Location Default is en_US
+  <meta property="og:locale" content="en_GB" /> 
+// Alternative areas
+  <meta property="og:locale:alternate" content="fr_FR" />
+<meta property="og:locale:alternate" content="es_ES" />
+// Site name (also a good idea)
+<meta property="og:site_name" content="<site name here>" />
+// Video here if any
+<meta property="og:video" content="<path/to/file.swf>" />
+
+
+-->
   </head>
   <body>
     <header>
