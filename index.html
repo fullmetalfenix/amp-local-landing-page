@@ -52,6 +52,8 @@
             }
             #header-logo{
                 font-size: 22px;
+                padding: 10px 20px;
+                background: black;
                 font-weight: 600;
                 color: rgba(250,250,250, .87)
             }
@@ -188,6 +190,9 @@
 
 <meta property="og:image:width" content="1200" /><!-- not actually required-->
 <meta property="og:image:height" content="630" /><!-- not actually required-->
+
+<meta name="description" content="Meta Description here!"/>
+
 <!-- Note: you can add multiple image sizes, just add a new og:image tags with the og:width and og:height after each new instance-->
 <!-- optional opengraph
 // for audio acomp.
@@ -216,7 +221,7 @@
                     <amp-social-share type="pinterest" width="40" height="40" data-param-text="Look at this local biz!" data-param-url="" data-param-attribution="AMP landing page"
                       data-param-media="https://amp.dev/static/samples/img/amp.jpg"></amp-social-share>
                     <amp-social-share type="twitter" width="40" height="40" data-param-text="Look at this local biz!" data-param-url="" data-param-attribution="AMP landing page"></amp-social-share>
-                    <a>(212) 555-5555</a>
+                    <a href="tel:2125555555">(212) 555-5555</a>
             </div>
     </header>
     <h1>Cloudflare Pages Trial</h1>
@@ -293,7 +298,7 @@
         <div>
             <p id="contact-title">Interested? Contact Us:</p>
             <p id="address">123 fake st <br> fake town, FS, 00000</p>
-            <a href="" id="fake-email">fake@fake.com</a>
+            <a href="mailto:fake@fake.com" id="fake-email">fake@fake.com</a>
             <p id="phone-footer">(212) 555-5555</p>
             <button id="contact-footer">More Info</button>
         </div>
