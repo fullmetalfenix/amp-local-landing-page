@@ -55,3 +55,19 @@ ex:
 To make this work you need to have different sized images for different sized screens.
 
 more about srcset [here](https://developer.mozilla.org/en-US/docs/Learn/HTML/Multimedia_and_embedding/Responsive_images)
+
+
+
+
+
+---
+
+## Testing
+
+To test your amp page out for validation, first you need a server. You can get a host and push it live, but I would recomend checking things out locally first. The first step in local validation is firing up a server - you can use any method you want but here are a few easy ones:
+
+1. Get a live server extension for your code editor. For example, VS Code has an extension aptly named `live server` - search for it in the extensions and follow the instructions for setting it up.
+2. Have node installed? Navigate in the terminal to the folder your amp page is located in and type: `npx http-server` - after a few seconds to a minute or two (dependant on your connection) this will start a local server. Copy the address from the terminal (dont use control-c, it stops the server) - then open the page at the address provided.
+3. You can use a web server solution like XAMPP - just dl, install then start the apache module - put your AMP page in a folder in the htdocs xampp folder and navigate to localhost/"folder name"
+
+Once a server is serving up your page, open up the browser tools, navigate to the console panel then add `#development=1` to the url and reload the page (ex localhost:8080#development=1) - any validation errors will show in the console. Once you are all clear you should get the message "AMP validation successful." - congrats! Your AMP page is now ready for hosting!
