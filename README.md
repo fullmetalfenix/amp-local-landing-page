@@ -71,3 +71,31 @@ To test your amp page out for validation, first you need a server. You can get a
 3. You can use a web server solution like XAMPP - just dl, install then start the apache module - put your AMP page in a folder in the htdocs xampp folder and navigate to localhost/"folder name"
 
 Once a server is serving up your page, open up the browser tools, navigate to the console panel then add `#development=1` to the url and reload the page (ex localhost:8080#development=1) - any validation errors will show in the console. Once you are all clear you should get the message "AMP validation successful." - congrats! Your AMP page is now ready for hosting!
+
+
+
+---
+## Adding analytics
+
+What would a landing page be without analytics right? Well AMP is a bit unique in that it won't allow JavaScript to be added and still validate. While this may seem like an pretty big roadblock, fortunatly AMP offers a solution through the `<amp-analytics>` Tag. This tag allows for you to customize analytics instalations. Here is how to set up a classic Google Analytics instalation:
+
+1. If you haven't already, go to [https://analytics.google.com/analytics/web](https://analytics.google.com/analytics/web) and sign up. After you sign up for GA and enter some info about your site, search for "Property Settings" then "Create Property". Enter the details (Name, Time, Currency) then **before** moving on - go to "Show advanced options" and toggle on "Create a Universal Analytics property". This will create the classic/legacy UA-xxxxxxxxx-x tag which you will need for the next steps (you can create the Analytics 4 too if you want but you don't need it for our purposes). Finish filling out the rest of the information and save that UA tag for later.
+2. Add the Analytics script *right before* the closing `</head>` tag:
+`  <script async custom-element="amp-analytics" src="https://cdn.ampproject.org/v0/amp-analytics-0.1.js"></script>`
+3. Add the AMP Analytics element *right after* the opening `<body>` tag, replacing *UA-xxxxxxxxx-x* with your UA tag: 
+<amp-analytics type="gtag" data-credentials="include">
+    <script type="application/json">
+  {
+    "vars" : {
+      "gtag_id": "UA-xxxxxxxxx-x",
+      "config" : {
+        "UA-xxxxxxxxx-x": { "groups": "default" }
+      }
+    }
+  }
+  </script>
+  </amp-analytics>
+
+  And that's it! Done. You have a basic install on your hands. You can add customizations (like tracking button clicks / conversions) by following the info [Here](https://amp.dev/documentation/components/amp-analytics/?format=websites)
+  
+  One of the important thing is that the `type` attribute is filled out with whatever analytics provider you want - approved from the AMP list. If its not on the provider list, you may need to reach out to them to see if there is anything they can do for you. Now you can go back to the Google Analytics dash and check out your pageviews when they populate.
