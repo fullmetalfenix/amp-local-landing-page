@@ -99,3 +99,29 @@ What would a landing page be without analytics right? Well AMP is a bit unique i
   And that's it! Done. You have a basic install on your hands. You can add customizations (like tracking button clicks / conversions) by following the info [Here](https://amp.dev/documentation/components/amp-analytics/?format=websites)
   
   One of the important thing is that the `type` attribute is filled out with whatever analytics provider you want - approved from the AMP list. If its not on the provider list, you may need to reach out to them to see if there is anything they can do for you. Now you can go back to the Google Analytics dash and check out your pageviews when they populate.
+
+
+
+---
+## Hosting
+
+Good news about hosting static sites like this one - there are a number of free options out there. My favorite right now is Cloudflare Pages, here's how to set up continuous deployment and host with them: 
+
+1. Once it's ready, push your code to github.
+
+2. Second, go to [https://pages.cloudflare.com](https://pages.cloudflare.com) and sign up. Log in and select 'Create a project' then connect your github account to Cloudflare. You can either give permission to all your repos or just the one with your AMP code, whichever you choose is fine. Back on cloudflare, select your repo then select 'begin setup'. Give the project a name and select a production branch - it doesn't have to be main (for example I used "production" on my site). Leave the build settings alone and skip straight to deploy. Wait for initial deployment and thats it! Cloudflare will return a url of your deployed page. Your done, it has been deployed.
+
+Now what?
+
+Go to 'Continue to project' and take a look around - the dash shows the latest production deployment as well as a list of past deployments - if you want to update / edit your site - just edit it locally and push it to your GitHub repo - that's it - Cloudflare will detect changes in your repo and pull the changes to deploy it to your live site. Another neat feature? If you push a branch to the repo it Cloudflare pages will detect that and deploy it as a staging branch letting you check out the changes live without having to merge them into the production branch! Another cool feature? If you go to settings > access policy you can lock these deployments to require a password so you can work on the site live without making it public! One last feature - you can select "Custom domains" and add a new domain for your site, replacing the default `.dev` one that they provide.
+
+Notes: 
+- Cloudflare adds SSL for you for free - awesome.
+- if you sign into Cloudflare proper, you can also adjust some of your sites settings.
+- After pushing new edits live to your site - you may want to go to the umbrella Cloudflare account > overview > purge cashing to speed along propagation of your changes.
+- There are a lot of cool settings in this dash but two can trip you up in AMP: page minification / concatenation and Cloudflare analytics. Why? Cloudflare will optimize the script for speed, editing where the scripts are added and the order they are added in and/or inject analytics code in your site - both of which will invalidate your AMP code - AMP is very ridged with script orders and using your own unapproved scripts are a no go. IF you do want analytics on your site then you will have to use an approved vendor from [this](https://amp.dev/documentation/guides-and-tutorials/optimize-and-measure/configure-analytics/analytics-vendors/?format=websites#vendors) list.
+
+
+
+
+
